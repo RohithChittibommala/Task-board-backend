@@ -11,7 +11,7 @@ router.post("/signin", loginController);
 router.post("/signup", signupController);
 
 router.get("/logout", (req, res) => {
-  res.clearCookie("jid", { sameSite: "none" });
+  res.clearCookie("jid", { sameSite: "none", secure: true });
   res.send({ type: "success", message: "logout success" });
 });
 
