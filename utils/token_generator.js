@@ -20,5 +20,7 @@ module.exports.sendRefreshToken = (res, user) => {
   res.cookie("jid", this.createRefreshToken(user), {
     httpOnly: true,
     expires: expiryDate,
+    sameSite: "none",
+    secure: true,
   });
 };
