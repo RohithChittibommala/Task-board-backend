@@ -9,7 +9,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://rohith-taskboard.netlify.app",
+    origin: ["https://rohith-taskboard.netlify.app", "http://localhost:3000"],
     credentials: true,
   })
 );
