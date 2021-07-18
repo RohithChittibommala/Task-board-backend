@@ -1,5 +1,6 @@
 const { User } = require("../models/user");
 const { errorFormator } = require("../utils");
+const jwt = require("jsonwebtoken");
 
 const {
   sendRefreshToken,
