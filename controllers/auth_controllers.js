@@ -6,6 +6,7 @@ const {
   sendRefreshToken,
   createAccessToken,
 } = require("../utils/token_generator");
+const sendMail = require("../email");
 
 module.exports.loginController = async (req, res) => {
   const { password, email } = req.body;
