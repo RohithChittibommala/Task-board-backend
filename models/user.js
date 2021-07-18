@@ -42,6 +42,11 @@ const UserSchema = new Schema({
     type: Number,
     default: 0,
   },
+
+  verified: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 UserSchema.pre("save", async function (next) {
