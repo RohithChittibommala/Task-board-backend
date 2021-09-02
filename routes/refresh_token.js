@@ -24,7 +24,6 @@ router.post("/", async (req, res) => {
   let payload;
   try {
     payload = verify(token, process.env.REFRESH_TOKEN_KEY);
-    console.log({ payload });
   } catch (error) {
     return res.status(403).json({ error: error });
   }
@@ -32,8 +31,6 @@ router.post("/", async (req, res) => {
   const { userId, tokenVersion } = payload;
 
   const user = await User.findOne({ _id: userId });
-
-  console.log(user);
 
   if (!user) return res.json({ ok: false, accessToken: "" });
 

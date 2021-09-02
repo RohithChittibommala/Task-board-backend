@@ -16,7 +16,6 @@ module.exports.createRefreshToken = (user) =>
 
 module.exports.sendRefreshToken = (res, user) => {
   const expiryDate = new Date(Number(new Date()) + 604800000);
-  console.log("called");
   res.cookie("jid", this.createRefreshToken(user), {
     httpOnly: true,
     expires: expiryDate,
