@@ -13,7 +13,7 @@ const verifyEmailTemplate = (userToken, email, name) => ({
   subject: "Verify your email",
   html: `Thanks you ${name} for signing up
          please click on the link to verify your account
-      <a href=http://localhost:3000/conformation/${userToken}>click here</a>`,
+      <a href=${process.env.APP_URL}/conformation/${userToken}>click here</a>`,
 });
 
 const forgotPasswordTemplate = (userToken, email) => ({
@@ -22,7 +22,7 @@ const forgotPasswordTemplate = (userToken, email) => ({
   subject: "Account Password Reset",
   html: `You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n
           Please click on the following link, or paste this into your browser to complete the process\n'If you did not request this, please ignore this email and your password will remain unchanged.\n'
-      <a href=http://localhost:3000/reset_password/${userToken}>click here</a>`,
+      <a href=${process.env.APP_URL}/reset_password/${userToken}>click here</a>`,
 });
 
 const accountPasswordChanged = (email) => ({
